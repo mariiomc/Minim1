@@ -1,4 +1,4 @@
-public class MotorJuego {
+public class JuegoManager {
 
     public void crearJuego(int juegoID, String descripcion,int numNiveles){
         Juego juego = new Juego(juegoID, descripcion, numNiveles);
@@ -6,7 +6,7 @@ public class MotorJuego {
     public void iniciarPartida(int usuarioID, int juegoID) {
         PartidaActual nuevaPartida = new PartidaActual(usuarioID, juegoID, 1, 50, false);
         Usuario.setPartidaActual(nuevaPartida);
-        PartidaActual.setNivelActual(1); // Actualizar el nivel actual del usuario
+        nuevaPartida.setNivelActual(1); // Actualizar el nivel actual del usuario
         Usuario.setPartidaActiva(); // Marcar la partida como activa
     }
 

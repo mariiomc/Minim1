@@ -7,8 +7,6 @@ public class Juego {
     private int id;
     private String descripcion;
     private int num_niveles;
-
-
     List<Usuario> usuarios;
 
     public Juego(int id, String descripcion, int num_niveles) {
@@ -29,13 +27,8 @@ public class Juego {
     }
     public List<Usuario> GetUsuarios() {
         return usuarios;
-        /*
-        ArrayList <Usuario> GetUsuario = new ArrayList<>(this.usuarios);
-        GetUsuario.sort(Comparator.comparing(Usuario::getPuntuacion));
-        return GetUsuario;
-
-         */
     }
+
 
 
 }

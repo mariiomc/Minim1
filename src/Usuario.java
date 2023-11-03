@@ -2,13 +2,13 @@ import java.util.*;
 
 public class Usuario {
         private int id;
-        List<Juego> puntuacion_juegos; //(id del juego, puntuacion)
+        int puntuacion_juegos []; //(id, puntuacion)
         private PartidaActual partidaActual;
-        private String nivel_actual;
+        private int nivel_actual;
         String[] juegos_jugados;
         private boolean partida_activa;
 
-    public Usuario(int id, List<Juego> puntuacion_juegos, PartidaActual partidaActual, String nivel_actual, String[] juegos_jugados) {
+    public Usuario(int id, int puntuacion_juegos[], PartidaActual partidaActual, int nivel_actual, String[] juegos_jugados) {
             this.id = id;
             this.nivel_actual = nivel_actual;
             this.puntuacion_juegos = puntuacion_juegos;
@@ -16,20 +16,24 @@ public class Usuario {
             this.partida_activa = false;
     }
 
-        // Getters y setters
         public int getId() {
             return id;
         }
-
-        public PartidaActual getPartidaActual() {
-            return partidaActual;
+        public PartidaActual getPartidaActual(PartidaActual partidaActual) {
+            return this.partidaActual;
         }
         public void setPartidaActual(PartidaActual partidaActual){
             this.partidaActual = partidaActual;
         }
-        public String getNivelActual(){return nivel_actual;}
+        public int getNivelActual(){return nivel_actual;}
         public int getPuntuacion(int id_juego) {
-            return puntuacion_juegos.lastIndexOf(id_juego);
+            int puntuacion=0;
+            for(int i=0;i<puntuacion_juegos.length;i++){
+                if(puntuacion_juegos[i] == id_juego){
+                    puntuacion = puntuacion_juegos[i+1];
+                }
+            }
+            return puntuacion;
         }
         public boolean getPartidaActiva(){return partida_activa;}
         public String[] getPartidasJugadas (){
