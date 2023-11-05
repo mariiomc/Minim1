@@ -4,31 +4,33 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Juego {
-    private int id;
+    private String id;
     private String descripcion;
     private int num_niveles;
     List<Usuario> usuarios;
 
-    public Juego(int id, String descripcion, int num_niveles) {
+    public Juego(String id, String descripcion, int num_niveles) {
         this.id = id;
         this.descripcion = descripcion;
         this.num_niveles = num_niveles;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
+    public void setId(String JuegoID){this.id = JuegoID;}
 
     public String getDescripcion() {
         return descripcion;
     }
-    public int getNum_niveles(){
+    public void setDescripcion(String descripcion){this.descripcion = descripcion;}
+    public int getNumNiveles(){
         return num_niveles;
     }
+    public void setNumNiveles(int numNiveles){this.num_niveles = numNiveles;}
     public List<Usuario> GetUsuarios() {
         return usuarios;
     }
-
-
+    public void setUsuarios(List<Usuario> usuario){this.usuarios = usuario;}
 
 }
